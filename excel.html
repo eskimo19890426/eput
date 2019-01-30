@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./excel_libs/jquery.min.js"></script>
+    <script type="text/javascript" src="./excel_libs/jspdf.js"></script>  
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        td {
+            font-size: 14px;
+        }
+        
+    </style>
+</head>
+
+<body style="width:100%">
+    <input type="button" value="打印" onclick="printpage()" />
+    <!-- 第一页 -->
+    <div style="width: calc(100% - 280px);margin:40px auto" id="table1">
+        <!-- <table border='1' style="border:1px solid #aaa;border-collapse: collapse;width:100%;text-align:center">            
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <img src="src/images/logoLogin.png" style="width:65px;height:65px;vertical-align: middle;">
+                        <div style="margin-top: 19px;margin-left:5px;display:inline-block;vertical-align: bottom;font-size:18px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">S11-M-200 / 10计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">XX变压器有限公司</td>
+                <td colspan="2">第1页</td>
+                <td colspan="2">共4页</td>
+            </tr>
+            <tr>
+                <td colspan="4"><span>容量</span></span>200KVA</td>
+                <td rowspan="4" colspan="14">
+                    <div>
+                        <p style="text-align:left">图纸代号、方案名称、方案描述及其它说明：</p>
+                        <p>10 ± 5 % / 0.4 Kv</p>
+                        <p>1HL.710.5426</p>
+                        <div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">联接组别</td>
+            </tr>
+            <tr>
+                <td colspan="2">3相</td>
+                <td colspan="2">50HZ</td>
+            </tr>
+            <tr>
+                <td colspan="2">户外装置</td>
+                <td colspan="2">油浸自冷</td>
+            </tr>
+            <tr>
+                <td rowspan="2">轨距</td>
+                <td>纵向</td>
+
+                <td colspan="2"></td>
+                <td colspan="4">高压套管</td>
+                <td colspan="5">低压套管</td>
+                <td colspan="5">0相套管</td>
+
+            </tr>
+            <tr>
+                <td>横向</td>
+                <td colspan="2"></td>
+                <td colspan="4"></td>
+                <td colspan="5"></td>
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                <td>试验</td>
+                <td rowspan="2">工频
+                    <br>(Kv有效)</td>
+                <td>全波</td>
+                <td>截波</td>
+                <td colspan="2">分接开关</td>
+                <td colspan="12"></td>
+            </tr>
+            <tr>
+                <td>试验</td>
+                <td colspan="2">(Kv峰值)</td>
+                <td colspan="4">储油柜 有</td>
+                <td colspan="10">尺寸(mm)：直径： 长度：</td>
+            </tr>
+
+            <tr>
+                <td>高压</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="14">标准重量(kg)： 变压器总油重： 柜内油重： 柜重(无油)：</td>
+
+            </tr>
+            <tr>
+                <td>低压</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="14">铁芯尺寸</td>
+            </tr>
+            <tr>
+                <td colspan="2">感应高压</td>
+                <td colspan="2">%</td>
+                <td colspan="2">级号</td>
+                <td colspan="2">1</td>
+                <td colspan="2">2</td>
+                <td colspan="2">3</td>
+                <td colspan="2">4</td>
+                <td colspan="2">5</td>
+                <td colspan="2">6</td>
+            </tr>
+            <tr>
+                <td colspan="4">器 身 重 量(Kg)</td>
+
+                <td colspan="2">心柱片宽</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">硅钢片重</td>
+                <td colspan="2"></td>
+                <td colspan="2">片厚</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">低压导线重</td>
+                <td colspan="2"></td>
+                <td colspan="2">级号</td>
+                <td colspan="2">7</td>
+                <td colspan="2">8</td>
+                <td colspan="2">9</td>
+                <td colspan="2">10</td>
+                <td colspan="2">11</td>
+                <td colspan="2">12</td>
+            </tr>
+            <tr>
+                <td colspan="2">高压导线重</td>
+                <td colspan="2"></td>
+                <td colspan="2">心柱片宽</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器身附件重</td>
+                <td colspan="2"></td>
+                <td colspan="2">片厚</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器 身 重</td>
+                <td colspan="2">0</td>
+                <td colspan="2">级号</td>
+                <td colspan="2">1</td>
+                <td colspan="2">2</td>
+                <td colspan="2">3</td>
+                <td colspan="2">4</td>
+                <td colspan="2">5</td>
+                <td colspan="2">6</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">油箱及附件重(Kg)</td>
+                <td colspan="2">轭片宽</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">箱 壁</td>
+                <td colspan="2"></td>
+                <td colspan="2">片厚</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">箱 盖</td>
+                <td colspan="2"></td>
+                <td colspan="2">级号</td>
+                <td colspan="2">7</td>
+                <td colspan="2">8</td>
+                <td colspan="2">9</td>
+                <td colspan="2">10</td>
+                <td colspan="2">11</td>
+                <td colspan="2">12</td>
+            </tr>
+            <tr>
+                <td colspan="2">箱 底</td>
+                <td colspan="2"></td>
+                <td colspan="2">轭片宽</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">散热片</td>
+                <td colspan="2"></td>
+                <td colspan="2">片厚</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">储 油 柜</td>
+                <td colspan="2">0</td>
+                <td colspan="5">铁芯直径φ(mm)：</td>
+                <td colspan="4">相 柱</td>
+                <td colspan="5">硅钢片牌号：</td>
+
+            </tr>
+            <tr>
+                <td colspan="2">小 车</td>
+                <td colspan="2"></td>
+                <td colspan="4">叠片系数Kd：</td>
+                <td colspan="4">中心距Mo：</td>
+                <td colspan="3">窗高：</td>
+                <td colspan="3">总叠厚：</td>
+            </tr>
+            <tr>
+                <td colspan="2">油箱附件重</td>
+                <td colspan="2"></td>
+                <td colspan="2">有效截面(cm2)</td>
+                <td colspan="2">磁通(千线)</td>
+                <td colspan="2">磁密(KGS)</td>
+                <td colspan="1">W/Kg</td>
+
+                <td colspan="2">VA/Kg</td>
+                <td colspan="2">铁芯重(Kg)</td>
+                <td colspan="1">Po(W)</td>
+                <td colspan="2">激磁伏安</td>
+            </tr>
+            <tr>
+                <td colspan="2">油箱总重</td>
+                <td colspan="2">0</td>
+                <td>心柱</td>
+                <td></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="4">油 重 计 算(Kg)</td>
+                <td>轭</td>
+                <td></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器身排油重</td>
+                <td colspan="2"></td>
+                <td>系数</td>
+                <td colspan="5"></td>
+                <td colspan="3">总 计</td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">空箱装油重</td>
+                <td colspan="2"></td>
+                <td colspan="14" style="text-align: left">空载电流（%）:</td>
+            </tr>
+            <tr>
+                <td colspan="2">油箱内油重</td>
+                <td colspan="2"></td>
+                <td colspan="14">油箱尺寸</td>
+            </tr>
+            <tr>
+                <td colspan="2">散热器油重</td>
+                <td colspan="2"></td>
+                <td colspan="3" rowspan="10">长(mm)</td>
+                <td colspan="3" rowspan="10">宽(mm)=</td>
+                <td colspan="3" rowspan="10">高(mm)=</td>
+                <td colspan="5">波纹片</td>
+            </tr>
+            <tr>
+                <td colspan="2">储油柜油重</td>
+                <td colspan="2"></td>
+                <td colspan="3">波纹片高b</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">总油重(Kg)</td>
+                <td colspan="2"></td>
+                <td colspan="3">波纹片深h</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="4">标 出 重 量(Kg)</td>
+                <td colspan="3">波纹片间距</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器 身 吊 重</td>
+                <td colspan="2"></td>
+                <td colspan="3">波纹片长轴数量</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器 身 重</td>
+                <td colspan="2"></td>
+                <td colspan="3">波纹片短轴数量</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">总 油 重</td>
+                <td colspan="2">=#REF!</td>
+                <td colspan="3">波纹片重</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">箱及附件重</td>
+                <td colspan="2">0</td>
+                <td colspan="5">油膨计算</td>
+
+            </tr>
+            <tr>
+                <td colspan="2">总 重</td>
+                <td colspan="2">=#REF!</td>
+                <td colspan="3">翅内油膨</td>
+                <td colspan="2"></td>
+            </tr>
+
+            <tr>
+                <td colspan="4">其 它 说 明</td>
+                <td colspan="3">箱内油膨</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="4" rowspan="9"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3">波纹片油重</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+
+                <td colspan="9">（有载）副油箱</td>
+
+                <td colspan="5" rowspan="3"></td>
+
+            </tr>
+            <tr>
+                <td colspan="3">长(mm)</td>
+                <td colspan="3">宽(mm)=</td>
+                <td colspan="3">高(mm)=</td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3">=</td>
+
+            </tr>
+            <tr>
+                <td colspan="14">箱内体积=100(dm3) 周长=11(mm) 面积=334(dm2)</td>
+
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1">设计</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1">校核</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1">审查</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">更改标记</td>
+                <td colspan="1">数量</td>
+                <td colspan="2">文件代号</td>
+                <td colspan="2">更改人签字</td>
+                <td colspan="2">日期</td>
+                <td colspan="1">审定</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+        </table> -->
+        <!-- <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div> -->
+        <!-- </div> -->
+        <!-- 第二页 -->
+        <!-- <div style="width: calc(100% - 280px);margin:100px auto;"> -->
+        <!-- <table border='1' style="border:1px solid #aaa;border-collapse: collapse;width: 100%;text-align:center;">
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <img src="src/images/logoLogin.png" style="width:65px;height:65px;vertical-align: middle;">
+                        <div style="margin-top: 19px;margin-left:5px;display:inline-block;vertical-align: bottom;font-size:18px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">S11-M-200 / 10计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">XX变压器有限公司</td>
+                <td colspan="2">第2页</td>
+                <td colspan="2">共4页</td>
+            </tr>
+            <tr>
+                <td colspan="2">线 圈 计 算</td>
+                <td colspan="8">低压线圈</td>
+                <td colspan="8">高压线圈</td>
+            </tr>
+            <tr>
+                <td colspan="2">导 线 材 质</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">容 量(KVA)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">接 法(KVA)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">匝电压(V/匝)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">电 压(伏)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">电 流(安) </td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">油 道</td>
+                <td colspan="8">全油道 X个油道</td>
+                <td colspan="8">全油道 X个油道</td>
+            </tr>
+            <tr>
+                <td colspan="2">线 圈 匝 数</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">线 圈 形 式</td>
+                <td colspan="8">螺旋式 双螺旋</td>
+                <td colspan="8">分段层式</td>
+            </tr>
+            <tr>
+                <td colspan="2">层数(段数)、
+                    <br>每层(段)匝数</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="2">导线
+                    <br>规格</td>
+                <td colspan="1">裸线</td>
+                <td colspan="8" rowspan="2"></td>
+                <td colspan="8" rowspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="1">绝缘</td>
+            </tr>
+            <tr>
+                <td colspan="2">截 面(mm2)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">电密(A/mm2)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">平均匝长(m)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">总 长(m)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">75℃电阻(Ω)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">导 线 重(Kg)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="1">线圈轴向、
+                    <br>辐向尺寸计算</td>
+                <td colspan="9" style="height: 220px;"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="1">附加损耗%</td>
+                <td colspan="17" style="height: 60px;"></td>
+            </tr>
+            <tr>
+                <td colspan="1" style="height: 220px;">线圈温升计算</td>
+                <td colspan="9"></td>
+                <td colspan="8"></td>
+            </tr>
+        </table>
+        <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div> -->
+        <!-- </div> -->
+        <!-- 第三页 -->
+        <!-- <div style="width: calc(100% - 40px);margin:100px auto"> -->
+        <!-- <table border='1' style="border:1px solid #aaa;border-collapse: collapse;width: 100%;text-align:center;">
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <img src="src/images/logoLogin.png" style="width:65px;height:65px;vertical-align: middle;">
+                        <div style="margin-top: 19px;margin-left:5px;display:inline-block;vertical-align: bottom;font-size:18px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">S11-M-200 / 10计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">XX变压器有限公司</td>
+                <td colspan="2">第3页</td>
+                <td colspan="2">共4页</td>
+            </tr>
+            <tr>
+                <td colspan="2">产品性能</td>
+                <td colspan="1">标准值</td>
+                <td colspan="1">设计值</td>
+                <td colspan="1">百分比</td>
+                <td colspan="13" rowspan="13"></td>
+            </tr>
+            <tr>
+                <td colspan="2">电压组合</td>
+                <td colspan="1">10/0.4</td>
+                <td colspan="1">10/0.4</td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="2">高压</td>
+                <td colspan="1">I2R</td>
+                <td colspan="1"></td>
+                <td colspan="1">0</td>
+                <td colspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1">附加</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="2">低压</td>
+                <td colspan="1">I2R</td>
+                <td colspan="1"></td>
+                <td colspan="1">0</td>
+                <td colspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1">附加</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">引线损耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">杂散损耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">短路损耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">空载损耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">总 损 耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">空载电流</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">阻抗电压</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="18" style="height: 300px;"></td>
+
+
+            </tr>
+            <tr>
+                <td colspan="6">长轴方向：</td>
+                <td colspan="6">短轴方向：</td>
+                <td colspan="6">绝缘半径(mm)</td>
+
+
+            </tr>
+            <tr>
+                <td colspan="6" style="height: 300px;"></td>
+                <td colspan="6" style="height: 300px;"></td>
+                <td colspan="6" style="height: 300px;"></td>
+
+
+            </tr>
+        </table>
+        <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div> -->
+        <!-- </div> -->
+        <!-- 第四页 -->
+        <!-- <div style="width: calc(100% - 40px);margin:100px auto"> -->
+        <!-- <table border='1' style="border:1px solid #aaa;border-collapse: collapse;width: 100%;text-align:center;">
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <img src="src/images/logoLogin.png" style="width:65px;height:65px;vertical-align: middle;">
+                        <div style="margin-top: 19px;margin-left:5px;display:inline-block;vertical-align: bottom;font-size:18px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">S11-M-200 / 10计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">XX变压器有限公司</td>
+                <td colspan="2">第4页</td>
+                <td colspan="2">共4页</td>
+            </tr>
+            <tr>
+                <td colspan="18" style="height: 750px;padding-top: 30px;position: relative">
+                    <span style="position: absolute;top:0;left: 0;display: inline-block;width: 22%;text-align: center;border: 1px solid #aaa;">油箱温升计算</span>
+                </td>
+
+            </tr>
+
+        </table>
+        <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div> -->
+    </div>
+    
+</body>
+<script src="./excel_libs/jquery.min.js"></script>
+<script src="./excel_libs/public.js"></script>
+<script>
+    function table(){
+        var scheme = window.localStorage.getItem('scheme');
+        var _GetSchemeParameters1 = [];
+        var _GetSchemeParameters2 = [];
+        var _GetSchemeParameters3 = [];
+        var _GetSchemeParameters4 = [];
+        var _GetSchemeParameters5 = [];
+        var _GetSchemeParameters6 = [];
+        var _GetSchemeParameters7 = [];
+        $.ajax({
+            url: "http://120.76.123.231:9016/api/SchemeProcess/GetSchemeParameters",
+            data: {
+                SchemeID: scheme
+            },
+            type: "post",
+            async:false,
+            success: function (data) {
+                console.log(data);
+                if(data.success){
+                    console.log(data.data.Item1)
+                    _GetSchemeParameters1 = data.data.Item1;//基本参数
+                    _GetSchemeParameters2 = data.data.Item2;//方案输入参数-主材基本参数
+                    _GetSchemeParameters3 = data.data.Item3;//辅材基本参数
+                    _GetSchemeParameters4 = data.data.Item4;//铁芯数据基本参数
+                    _GetSchemeParameters5 = data.data.Item5;//高低压主绝缘基本参数
+                    _GetSchemeParameters6 = data.data.Item6;//高低压线圈参数
+                    _GetSchemeParameters7 = data.data.Item7;//油箱基本参数
+                }
+            },
+            error: function (errort, msg) {
+                console.log(errort);
+            }
+        });
+        console.log(_GetSchemeParameters1)
+        var _GetParameterIdentity = [];
+        $.ajax({
+            url: "http://120.76.123.231:9016/api/SchemeProcess/GetParameterIdentity",
+            data: {
+                SchemeID: scheme
+            },
+            type: "post",
+            async:false,
+            success: function (data) {
+                console.log(data);
+                if(data.success){
+                    _GetParameterIdentity = data.data;
+                }
+            },
+            error: function (errort, msg) {
+                console.log(errort);
+            }
+        });
+        //相数
+        var _number = JoinGroupID(_GetSchemeParameters1.JoinGroupID) > 6 ? '单' : '三';
+        var html =`<table border='1' style="border:1px solid #aaa;border-collapse: collapse;width:100%;text-align:center">            
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <img src="src/images/logoLogin.png" style="width:65px;height:65px;vertical-align: middle;">
+                        <div style="margin-top: 19px;margin-left:5px;display:inline-block;vertical-align: bottom;font-size:18px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">EPUT变压器有限公司</td>
+                <td colspan="2">第1页</td>
+                <td colspan="2">共4页</td>
+            </tr>
+            <tr>
+                <td colspan="4"><span>容量</span></span>${_GetSchemeParameters1.RatedCapacity}KVA</td>
+                <td rowspan="4" colspan="14">
+                    <div>
+                        <p style="text-align:left">图纸代号、方案名称、方案描述及其它说明：</p>
+                        <p>10 ± 5 % / 0.4 Kv</p>
+                        <p>1HL.710.5426</p>
+                        <div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">联接组别</td>
+            </tr>
+            <tr>
+                <td colspan="2">${_number}相</td>
+                <td colspan="2">${_GetSchemeParameters1.Frequency}</td>
+            </tr>
+            <tr>
+                <td colspan="2">户外装置</td>
+                <td colspan="2">油浸自冷</td>
+            </tr>
+            <tr>
+                <td rowspan="2">轨距</td>
+                <td>纵向</td>
+
+                <td colspan="2"></td>
+                <td colspan="4">高压套管</td>
+                <td colspan="5">低压套管</td>
+                <td colspan="5">0相套管</td>
+
+            </tr>
+            <tr>
+                <td>横向</td>
+                <td colspan="2"></td>
+                <td colspan="4"></td>
+                <td colspan="5"></td>
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                <td>试验</td>
+                <td rowspan="2">工频
+                    <br>(Kv有效)</td>
+                <td>全波</td>
+                <td>截波</td>
+                <td colspan="2">分接开关</td>
+                <td colspan="12"></td>
+            </tr>
+            <tr>
+                <td>试验</td>
+                <td colspan="2">(Kv峰值)</td>
+                <td colspan="4">储油柜 有${_GetParameterIdentity.F_OilConservator[0]}</td>
+                <td colspan="10">尺寸(mm)：${_GetParameterIdentity.F_OilConservator[1]}</td>
+            </tr>
+
+            <tr>
+                <td>高压</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="14">标准重量(kg)： </td>
+
+            </tr>
+            <tr>
+                <td>低压</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="14">铁芯尺寸</td>
+            </tr>
+            <tr>
+                <td colspan="2">感应高压</td>
+                <td colspan="2">%</td>
+                <td colspan="2">级号</td>
+                <td colspan="2">1</td>
+                <td colspan="2">2</td>
+                <td colspan="2">3</td>
+                <td colspan="2">4</td>
+                <td colspan="2">5</td>
+                <td colspan="2">6</td>
+            </tr>
+            <tr>
+                <td colspan="4">器 身 重 量(Kg)</td>
+
+                <td colspan="2">心柱片宽</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">硅钢片重</td>
+                <td colspan="2"></td>
+                <td colspan="2">片厚</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">低压导线重</td>
+                <td colspan="2"></td>
+                <td colspan="2">级号</td>
+                <td colspan="2">7</td>
+                <td colspan="2">8</td>
+                <td colspan="2">9</td>
+                <td colspan="2">10</td>
+                <td colspan="2">11</td>
+                <td colspan="2">12</td>
+            </tr>
+            <tr>
+                <td colspan="2">高压导线重</td>
+                <td colspan="2"></td>
+                <td colspan="2">心柱片宽</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器身附件重</td>
+                <td colspan="2"></td>
+                <td colspan="2">片厚</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器 身 重</td>
+                <td colspan="2">0</td>
+                <td colspan="2">级号</td>
+                <td colspan="2">1</td>
+                <td colspan="2">2</td>
+                <td colspan="2">3</td>
+                <td colspan="2">4</td>
+                <td colspan="2">5</td>
+                <td colspan="2">6</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">油箱及附件重(Kg)</td>
+                <td colspan="2">轭片宽</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">箱 壁</td>
+                <td colspan="2"></td>
+                <td colspan="2">片厚</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">箱 盖</td>
+                <td colspan="2"></td>
+                <td colspan="2">级号</td>
+                <td colspan="2">7</td>
+                <td colspan="2">8</td>
+                <td colspan="2">9</td>
+                <td colspan="2">10</td>
+                <td colspan="2">11</td>
+                <td colspan="2">12</td>
+            </tr>
+            <tr>
+                <td colspan="2">箱 底</td>
+                <td colspan="2"></td>
+                <td colspan="2">轭片宽</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">散热片</td>
+                <td colspan="2"></td>
+                <td colspan="2">片厚</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">储 油 柜</td>
+                <td colspan="2">0</td>
+                <td colspan="5">铁芯直径φ(mm)：</td>
+                <td colspan="4">相 柱</td>
+                <td colspan="5">硅钢片牌号：</td>
+
+            </tr>
+            <tr>
+                <td colspan="2">小 车</td>
+                <td colspan="2"></td>
+                <td colspan="4">叠片系数Kd：</td>
+                <td colspan="4">中心距Mo：</td>
+                <td colspan="3">窗高：</td>
+                <td colspan="3">总叠厚：</td>
+            </tr>
+            <tr>
+                <td colspan="2">油箱附件重</td>
+                <td colspan="2"></td>
+                <td colspan="2">有效截面(cm2)</td>
+                <td colspan="2">磁通(千线)</td>
+                <td colspan="2">磁密(KGS)</td>
+                <td colspan="1">W/Kg</td>
+
+                <td colspan="2">VA/Kg</td>
+                <td colspan="2">铁芯重(Kg)</td>
+                <td colspan="1">Po(W)</td>
+                <td colspan="2">激磁伏安</td>
+            </tr>
+            <tr>
+                <td colspan="2">油箱总重</td>
+                <td colspan="2">0</td>
+                <td>心柱</td>
+                <td></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="4">油 重 计 算(Kg)</td>
+                <td>轭</td>
+                <td></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器身排油重</td>
+                <td colspan="2"></td>
+                <td>系数</td>
+                <td colspan="5"></td>
+                <td colspan="3">总 计</td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">空箱装油重</td>
+                <td colspan="2"></td>
+                <td colspan="14" style="text-align: left">空载电流（%）:</td>
+            </tr>
+            <tr>
+                <td colspan="2">油箱内油重</td>
+                <td colspan="2"></td>
+                <td colspan="14">油箱尺寸</td>
+            </tr>
+            <tr>
+                <td colspan="2">散热器油重</td>
+                <td colspan="2"></td>
+                <td colspan="3" rowspan="10">长(mm)</td>
+                <td colspan="3" rowspan="10">宽(mm)=</td>
+                <td colspan="3" rowspan="10">高(mm)=</td>
+                <td colspan="5">波纹片</td>
+            </tr>
+            <tr>
+                <td colspan="2">储油柜油重</td>
+                <td colspan="2"></td>
+                <td colspan="3">波纹片高b</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">总油重(Kg)</td>
+                <td colspan="2"></td>
+                <td colspan="3">波纹片深h</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="4">标 出 重 量(Kg)</td>
+                <td colspan="3">波纹片间距</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器 身 吊 重</td>
+                <td colspan="2"></td>
+                <td colspan="3">波纹片长轴数量</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">器 身 重</td>
+                <td colspan="2"></td>
+                <td colspan="3">波纹片短轴数量</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">总 油 重</td>
+                <td colspan="2">=#REF!</td>
+                <td colspan="3">波纹片重</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">箱及附件重</td>
+                <td colspan="2">0</td>
+                <td colspan="5">油膨计算</td>
+
+            </tr>
+            <tr>
+                <td colspan="2">总 重</td>
+                <td colspan="2">=#REF!</td>
+                <td colspan="3">翅内油膨</td>
+                <td colspan="2"></td>
+            </tr>
+
+            <tr>
+                <td colspan="4">其 它 说 明</td>
+                <td colspan="3">箱内油膨</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="4" rowspan="9"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3">波纹片油重</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+
+                <td colspan="9">（有载）副油箱</td>
+
+                <td colspan="5" rowspan="3"></td>
+
+            </tr>
+            <tr>
+                <td colspan="3">长(mm)</td>
+                <td colspan="3">宽(mm)=</td>
+                <td colspan="3">高(mm)=</td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3">=</td>
+
+            </tr>
+            <tr>
+                <td colspan="14">箱内体积=100(dm3) 周长=11(mm) 面积=334(dm2)</td>
+
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1">设计</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1">校核</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1">审查</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">更改标记</td>
+                <td colspan="1">数量</td>
+                <td colspan="2">文件代号</td>
+                <td colspan="2">更改人签字</td>
+                <td colspan="2">日期</td>
+                <td colspan="1">审定</td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+        </table>
+        <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div>
+        <table border='1' style="border:1px solid #aaa;border-collapse: collapse;width: 100%;text-align:center;">
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <img src="src/images/logoLogin.png" style="width:65px;height:65px;vertical-align: middle;">
+                        <div style="margin-top: 19px;margin-left:5px;display:inline-block;vertical-align: bottom;font-size:18px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">S11-M-200 / 10计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">XX变压器有限公司</td>
+                <td colspan="2">第2页</td>
+                <td colspan="2">共4页</td>
+            </tr>
+            <tr>
+                <td colspan="2">线 圈 计 算</td>
+                <td colspan="8">低压线圈</td>
+                <td colspan="8">高压线圈</td>
+            </tr>
+            <tr>
+                <td colspan="2">导 线 材 质</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">容 量(KVA)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">接 法(KVA)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">匝电压(V/匝)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">电 压(伏)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">电 流(安) </td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">油 道</td>
+                <td colspan="8">全油道 X个油道</td>
+                <td colspan="8">全油道 X个油道</td>
+            </tr>
+            <tr>
+                <td colspan="2">线 圈 匝 数</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">线 圈 形 式</td>
+                <td colspan="8">螺旋式 双螺旋</td>
+                <td colspan="8">分段层式</td>
+            </tr>
+            <tr>
+                <td colspan="2">层数(段数)、
+                    <br>每层(段)匝数</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="2">导线
+                    <br>规格</td>
+                <td colspan="1">裸线</td>
+                <td colspan="8" rowspan="2"></td>
+                <td colspan="8" rowspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="1">绝缘</td>
+            </tr>
+            <tr>
+                <td colspan="2">截 面(mm2)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">电密(A/mm2)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">平均匝长(m)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">总 长(m)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">75℃电阻(Ω)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="2">导 线 重(Kg)</td>
+                <td colspan="8"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="1">线圈轴向、
+                    <br>辐向尺寸计算</td>
+                <td colspan="9" style="height: 220px;"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td colspan="1">附加损耗%</td>
+                <td colspan="17" style="height: 60px;"></td>
+            </tr>
+            <tr>
+                <td colspan="1" style="height: 220px;">线圈温升计算</td>
+                <td colspan="9"></td>
+                <td colspan="8"></td>
+            </tr>
+        </table>
+        <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div>
+        <table border='1' style="border:1px solid #aaa;border-collapse: collapse;width: 100%;text-align:center;">
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <img src="src/images/logoLogin.png" style="width:65px;height:65px;vertical-align: middle;">
+                        <div style="margin-top: 19px;margin-left:5px;display:inline-block;vertical-align: bottom;font-size:18px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">S11-M-200 / 10计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">XX变压器有限公司</td>
+                <td colspan="2">第3页</td>
+                <td colspan="2">共4页</td>
+            </tr>
+            <tr>
+                <td colspan="2">产品性能</td>
+                <td colspan="1">标准值</td>
+                <td colspan="1">设计值</td>
+                <td colspan="1">百分比</td>
+                <td colspan="13" rowspan="13"></td>
+            </tr>
+            <tr>
+                <td colspan="2">电压组合</td>
+                <td colspan="1">10/0.4</td>
+                <td colspan="1">10/0.4</td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="2">高压</td>
+                <td colspan="1">I2R</td>
+                <td colspan="1"></td>
+                <td colspan="1">0</td>
+                <td colspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1">附加</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="2">低压</td>
+                <td colspan="1">I2R</td>
+                <td colspan="1"></td>
+                <td colspan="1">0</td>
+                <td colspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1">附加</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">引线损耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">杂散损耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">短路损耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">空载损耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">总 损 耗</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">空载电流</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">阻抗电压</td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+
+            </tr>
+            <tr>
+                <td colspan="18" style="height: 300px;"></td>
+
+
+            </tr>
+            <tr>
+                <td colspan="6">长轴方向：</td>
+                <td colspan="6">短轴方向：</td>
+                <td colspan="6">绝缘半径(mm)</td>
+
+
+            </tr>
+            <tr>
+                <td colspan="6" style="height: 300px;"></td>
+                <td colspan="6" style="height: 300px;"></td>
+                <td colspan="6" style="height: 300px;"></td>
+
+
+            </tr>
+        </table>
+        <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div>
+        <table border='1' style="border:1px solid #aaa;border-collapse: collapse;width: 100%;text-align:center;">
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <img src="src/images/logoLogin.png" style="width:65px;height:65px;vertical-align: middle;">
+                        <div style="margin-top: 19px;margin-left:5px;display:inline-block;vertical-align: bottom;font-size:18px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">S11-M-200 / 10计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">XX变压器有限公司</td>
+                <td colspan="2">第4页</td>
+                <td colspan="2">共4页</td>
+            </tr>
+            <tr>
+                <td colspan="18" style="height: 750px;padding-top: 30px;position: relative">
+                    <span style="position: absolute;top:0;left: 0;display: inline-block;width: 22%;text-align: center;border: 1px solid #aaa;">油箱温升计算</span>
+                </td>
+
+            </tr>
+
+        </table>
+        <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div>
+        `
+   
+        $('#table1').html(html)
+    }
+    table();
+    // function download(filename, text) {
+    // var pom = document.createElement('a');
+    //     pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    //     pom.setAttribute('download', filename);
+    //     if (document.createEvent) {
+    //         var event = document.createEvent('MouseEvents');
+    //         event.initEvent('click', true, true);
+    //         pom.dispatchEvent(event);
+    //     } else {
+    //         pom.click();
+    //     }
+    // }
+    // var _table1 = document.getElementById('table1');
+    // download('calc.pdf',_table1)
+
+    // function savetxt(fileURL){
+    //     var fileURL=window.open (fileURL,"_blank","height=0,width=0,toolbar=no,menubar=no,scrollbars=no,resizable=on,location=no,status=no");
+    //     fileURL.document.execCommand("SaveAs");
+    //     // fileURL.window.close();
+    //     // fileURL.close();
+    // }
+    printpage = function(){
+        var table1Id = document.getElementById("table1");
+        window.document.body.innerHTML=table1Id.innerHTML;  
+        window.print();  
+    }
+    
+</script>
+</html>

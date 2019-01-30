@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./excel_libs/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        td {
+            font-size: 10px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+
+<body style="width:100%">
+    <!-- 计算单 -->
+    <div style="width: calc(100% - 40px);margin:auto">
+        <table border='1' style="border:1px solid #aaa;border-collapse: collapse;width: 100%;text-align:center;">
+            <tr style="visibility: hidden;">
+                <td>第一页</td>
+                <td>共4页</td>
+                <td>第一页</td>
+                <td>共4页</td>
+                <td>第一页</td>
+                <td>共4页</td>
+                <td>第一页</td>
+                <td>共4页</td>
+                <td>第一页</td>
+                <td>共4页</td>
+                <td>第一页</td>
+                <td>共4页</td>
+                <td>第一页</td>
+                <td>共4页</td>
+                <td>第一页</td>
+                <td>共4页</td>
+                <td>第一页</td>
+                <td>共4页</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div style="display: flex ;margin: auto;justify-content: space-around">
+                        <img src="src/images/logoimg.png">
+                        <div style="margin-top: 20px">
+                            <p>中国伏安网</p>
+                            <p>EPUT</p>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2" colspan="10">S11-M-200 / 10计算单</td>
+                <td colspan="4">1HL.710.5426JD</td>
+            </tr>
+            <tr>
+                <td colspan="4">XX变压器有限公司</td>
+                <td colspan="2">第1页</td>
+                <td colspan="2">共1页</td>
+            </tr>
+            <tr>
+                <td colspan="18">
+                    <div style="height: 200px;">
+                        <p style="text-align:left">图纸代号、方案名称、方案描述及其它说明：</p>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1">类别</td>
+                <td colspan="1">序号</td>
+                <td colspan="3">材料名称</td>
+                <td colspan="3">规格型号</td>
+                <td colspan="2">用量</td>
+                <td colspan="1">单位</td>
+                <td colspan="2">单价</td>
+                <td colspan="2">合计</td>
+                <td colspan="3">备注</td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="6">主材</td>
+                <td colspan="1">1</td>
+                <td colspan="3">高压线材</td>
+                <td colspan="3">铝 纸包扁线 XXXX</td>
+                <td colspan="2">1000</td>
+                <td colspan="1">元/KG</td>
+                <td colspan="2">10</td>
+                <td colspan="2">10000.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">2</td>
+                <td colspan="3">低压线材</td>
+                <td colspan="3">铝 纸包扁线 XXXX</td>
+                <td colspan="2">1000</td>
+                <td colspan="1">元/KG</td>
+                <td colspan="2">10</td>
+                <td colspan="2">10000.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">3</td>
+                <td colspan="3">硅钢片</td>
+                <td colspan="3">27Q100</td>
+                <td colspan="2">1000</td>
+                <td colspan="1">元/KG</td>
+                <td colspan="2">12</td>
+                <td colspan="2">12000.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">4</td>
+                <td colspan="3">变压器油</td>
+                <td colspan="3">25#</td>
+                <td colspan="2">250</td>
+                <td colspan="1">元/KG</td>
+                <td colspan="2">13</td>
+                <td colspan="2">3250.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">5</td>
+                <td colspan="3">油箱</td>
+                <td colspan="3">XXXX</td>
+                <td colspan="2">100</td>
+                <td colspan="1">元/KG</td>
+                <td colspan="2">14</td>
+                <td colspan="2">1400.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">6</td>
+                <td colspan="3">散热片</td>
+                <td colspan="3">片散散热片</td>
+                <td colspan="2">100</td>
+                <td colspan="1">元/KG</td>
+                <td colspan="2">15</td>
+                <td colspan="2">1500.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="14">辅材</td>
+                <td colspan="1">7</td>
+                <td colspan="3">低压出线</td>
+                <td colspan="3">铝 纸包扁线 XXXX</td>
+                <td colspan="2">101</td>
+                <td colspan="1">元/KG</td>
+                <td colspan="2">16</td>
+                <td colspan="2">1616.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">8</td>
+                <td colspan="3">夹件</td>
+                <td colspan="3">-</td>
+                <td colspan="2">101</td>
+                <td colspan="1">元/KG</td>
+                <td colspan="2">16</td>
+                <td colspan="2">1616.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">9</td>
+                <td colspan="3">气体继电器</td>
+                <td colspan="3">XXXX</td>
+                <td colspan="2">102</td>
+                <td colspan="1">个</td>
+                <td colspan="2">17</td>
+                <td colspan="2">1734.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">10</td>
+                <td colspan="3">油枕蝶阀</td>
+                <td colspan="3">XXXX</td>
+                <td colspan="2">103</td>
+                <td colspan="1">个</td>
+                <td colspan="2">18</td>
+                <td colspan="2">1854.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">11</td>
+                <td colspan="3">温度指示控制器</td>
+                <td colspan="3">XXXX</td>
+                <td colspan="2">104</td>
+                <td colspan="1">个</td>
+                <td colspan="2">19</td>
+                <td colspan="2">1976.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">12</td>
+                <td colspan="3">分接开关</td>
+                <td colspan="3">XXXX</td>
+                <td colspan="2">105</td>
+                <td colspan="1">个</td>
+                <td colspan="2">20</td>
+                <td colspan="2">2100.00</td>
+                <td colspan="3"></td>
+            </tr>
+
+            <tr>
+
+                <td colspan="1">13</td>
+                <td colspan="3">高压套管（含导电杆）</td>
+                <td colspan="3">XXXX</td>
+                <td colspan="2">106</td>
+                <td colspan="1">个</td>
+                <td colspan="2">21</td>
+                <td colspan="2">2226.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">14</td>
+                <td colspan="3">低压套管（含导电杆）</td>
+                <td colspan="3">XXXX</td>
+                <td colspan="2">107</td>
+                <td colspan="1">个</td>
+                <td colspan="2">22</td>
+                <td colspan="2">2354.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">15</td>
+                <td colspan="3">低压零线套管（含导电杆）</td>
+                <td colspan="3">XXXX</td>
+                <td colspan="2">108</td>
+                <td colspan="1">个</td>
+                <td colspan="2">23</td>
+                <td colspan="2">2484.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td colspan="1">16</td>
+                <td colspan="3">其它</td>
+                <td colspan="3">-</td>
+                <td colspan="2">X</td>
+                <td colspan="1">%</td>
+                <td colspan="2">XXXX</td>
+                <td colspan="2">#VALUE! </td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="1">17</td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="1">18</td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="1">19</td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="1">20</td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="1"></td>
+                <td colspan="7">合计</td>
+
+                <td colspan="7">#VALUE!</td>
+
+                <td colspan="3"></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="4" rowspan="4"></td>
+
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1">设计</td>
+                <td colspan="2"></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                    <td colspan="1"></td>
+                    <td colspan="1"></td>
+                    <td colspan="2"></td>
+                    <td colspan="2"></td>
+                    <td colspan="2"></td>
+                    <td colspan="1">校核</td>
+                    <td colspan="2"></td>
+                    <td colspan="3"></td>
+            </tr>
+            <tr>
+
+
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+                <td colspan="1">审查</td>
+                <td colspan="2"></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+
+                <td colspan="1">更改标记</td>
+                <td colspan="1">数量</td>
+                <td colspan="2">文件代号</td>
+                <td colspan="2">更改人签字</td>
+                <td colspan="2">日期</td>
+                <td colspan="1">审定</td>
+                <td colspan="2"></td>
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        <div>
+            <span>浙江埃普特信息技术有限公司</span>
+            <span style="float: right">WWW.EPUT123.COM</span>
+        </div>
+    </div>
+    <input type="button" value="Print this page" onclick="printpage()" />
+</body>
+
+</html>
+<script>
+    //console.log($('table').html())
+    function printpage() {
+        window.print()
+    }
+    (function () {
+        var _schemeID = localStorage.getItem('scheme')
+        var data = {
+            SchemeID: _schemeID
+        }
+        $.ajax({
+            type: 'POST',
+            url: 'http://61.129.51.174:9016/api/SchemeProcess/GetSchemeDetial',
+            data: data,
+            success: function (data) {
+                console.log(data)
+                // if(data.success){
+                // 	 $('#fileName').html(_fileName)
+                // 	 $('#fileName').attr('name',data.data.Data1[0]);
+                // 	 $('#fileName').css({'display':'block'})					
+                // }else{
+                // 	success(data.message);
+                // }
+            },
+            error: function (err) {
+                success(err)
+            }
+        })
+    })()
+</script>
